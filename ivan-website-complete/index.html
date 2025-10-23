@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Ssentamu | My Story of Resilience</title>
+    <style>
+        /* All the CSS styles from earlier */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e74c3c 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+        
+        /* Main Content */
+        .main {
+            padding: 20px 0;
+            background: #fff;
+        }
+        .chapter {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .chapter h2 {
+            color: #2c3e50;
+            border-bottom: #e74c3c 2px solid;
+            padding-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .photo-gallery img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            border: 3px solid #34495e;
+            transition: transform 0.3s ease;
+        }
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Image Captions */
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        /* Contact Styles */
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .phone-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .phone-number {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .phone-number:hover {
+            background: #e74c3c;
+        }
+        .email {
+            color: #2c3e50;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .email:hover {
+            color: #e74c3c;
+        }
+
+        /* NEW STYLES */
+        .travel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .travel-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .travel-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 3px solid #34495e;
+        }
+        .music-player {
+            background: #34495e;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .song-list {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .song-item {
+            padding: 15px;
+            border-bottom: 1px solid #5d6d7e;
+            background: rgba(255,255,255,0.1);
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .song-item:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .skill-tag {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .travel-spot {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .travel-spot h3 {
+            color: #e74c3c;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .family-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .family-section h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        .video-placeholder {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            border: 3px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Ivan Ssentamu</h1>
+            <p>My Story of Resilience, Purpose, and Service</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">My Story</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#travel">Places Visited</a></li>
+                <li><a href="#music">My Music</a></li>
+                <li><a href="#family">Family & Memories</a></li>
+                <li><a href="#friends">Friends & Comrades</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="chapter">
+                <h2>Welcome to My Journey</h2>
+                <p>"My story was not written with his ink. It was written with the sweat of my own brow and the support of those who chose to stay."</p>
+                <p>This is my story of overcoming abandonment, finding purpose through education, and building a life of service in the Uganda Peoples Defense Forces.</p>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story">
+            <!-- Chapter 1 -->
+            <div class="chapter">
+                <h2>Chapter 1: The Foundations</h2>
+                <p>My name is Ivan Ssentamu. This name carries my story, one that began on the seventh of June in 1998, in the bustling, vibrant heart of Kibuli Namuwongo, Kampala. But the warmth of my birthplace would soon be overshadowed by a cold departure.</p>
+                
+                <p>The anchor of a family was ripped away when I was just a toddler, at one year and six months old. My father, the man whose presence should have been my first fortress, chose to walk away. His abandonment left me in a world of uncertainty, a small child in a suddenly large and confusing world.</p>
+                
+                <p>In the void he left behind, a figure of immense strength emerged: my grandmother, Mary Nakabugo. She became my shelter. Her hands, worn from life's struggles, now worked to build a foundation for me. She was my comfort in the silence, my protector in a world that felt unsteady.</p>
+                
+                <p>Yet, no matter the love she provided, the shadow of my father's neglect was a constant, chilling presence. I grew up watching other children held by their fathers, hearing their laughter, and I knew a hollow space inside me that was shaped exactly like a father's love—a love I could never touch, never experience. It was an absence that taught me about loneliness before I even knew the word.</p>
+                
+                <p>My mother, Moreen Nansubuga, watched this silent pain etch itself into my childhood. She saw the neglect I endured, and a mother's fierce love compelled her to act. With courage that defines her, she made a decision that would alter the course of my life. She took me from Namuwongo and brought me to a new beginning in Kirondo village, in the south of Mukono District. It was a journey away from the familiar ache of neglect and towards the uncertain, yet hopeful, embrace of a new beginning.</p>
+                
+                <p>This journey—from a love that was absent to a love that fought for me—is where my story truly begins.</p>
+            </div>
+
+            <!-- Chapter 2 -->
+            <div class="chapter">
+                <h2>Chapter 2: The Classroom as a Sanctuary</h2>
+                <p>My new life in Kirondo village came with a new beginning: the door to education was opened for me. I was taken to school, where I first set foot in a nursery classroom. The alphabet and numbers became my first companions in a world of learning, a world far removed from the instability of my earliest years.</p>
+                
+                <p>From there, I joined the halls of Sir Apollo Primary School. My primary education became a steady anchor, a journey of discovery and growth. In 2012, I reached a significant milestone—I finished the primary level. It was a triumph, a testament to the perseverance nurtured by those who stood by me.</p>
+                
+                <p>In 2013, I advanced to Sir Apollo Kaggwa Secondary School. There, I dedicated myself to my studies, and in 2016, I earned my Uganda Certificate of Education (UCE). Driven by a desire to go further, I continued at the same school for my Advanced Level. In 2018, I stood as a graduate, holding my Uganda Advanced Certificate of Education (UACE)—a significant achievement that marked the culmination of years of hard work.</p>
+                
+                <p>But throughout this entire academic journey—from my first day in nursery to my final exams in A-Level—I never received any assistance from my father. Not a single school fee, not a word of encouragement, not a presence at any school function. The shadow of his absence stretched across every classroom and every report card.</p>
+                
+                <p>What makes this absence even more profound is that I could not even recall his face. I had left his vicinity when I was too young, and his image had faded from my memory completely. He was not just an absent supporter; he was a ghost, a faceless void.</p>
+                
+                <p>This chapter of my life was not written with his ink. It was written with the sweat of my own brow and the steadfast support of the women who chose to stay: my mother, <strong>Moreen Nansubuga</strong>, whose courageous decision set me on this path, and my grandmother, <strong>Mary Nakabugo</strong>, whose early care was my first shelter. Their belief was the pen; their love, the ink.</p>
+            </div>
+
+            <!-- Chapter 2.5 -->
+            <div class="chapter">
+                <h2>Chapter 2.5: The Pitch and The Melody</h2>
+                <p>Beyond the classroom, life was not just about overcoming absence; it was about discovering passion. I found my escape, my joy, and my peace in two powerful places: the football pitch and the world of music.</p>
+                
+                <p>On the field, I was a striker. There, I wasn't Ivan the student carrying the weight of his past; I was Ivan the footballer, focused, fast, and decisive. The thrill of the game, the camaraderie with teammates, and the singular focus of chasing a ball—it was a freedom that nothing else could match. It taught me about teamwork, instant decisions, and the pure joy of a goal scored.</p>
+                
+                <p>And when I needed to quiet my mind and soothe my soul, I found my sanctuary in the rhythms of Reggae music. More than any other, the voice of the late, great Lucky Philip Dube became my comfort. His songs, filled with messages of love, struggle, and humanity, would wash over me, bringing a profound sense of calm. In his music, I found a resonance, a understanding that gave words to feelings I sometimes couldn't express myself. It was more than a hobby; it was therapy.</p>
+                
+                <p>These weren't just pastimes; they were the pillars that held up my spirit. While my academics built my future, football and music preserved my heart.</p>
+            </div>
+
+            <!-- Chapter 3 -->
+            <div class="chapter">
+                <h2>Chapter 3: The Ghost and The "Dragon"</h2>
+                <p>All my life, a dream had burned within me: to study and become a lawyer. I saw it as a path to justice, to a voice, to a future I could shape with my own mind. But after the triumph of my UACE in 2018, I collided with a hard reality—a lack of funds. My mother, Moreen Nansubuga, had fought countless battles for me, but taking me to university was a mountain she simply could not afford to climb.</p>
+                
+                <p>So, in 2019, while my peers planned their university journeys, I entered a different kind of education. My vacation after A-Levels was spent not in relaxation, but in the demanding physical labor of the village. I took on cheap labor—digging in the sun, the smoky toil of charcoal burning, the heavy lifting of bricklaying. I did whatever I could to earn a little something, to sustain myself as a young man and to feel a sense of contribution. Life was not easy; without connections, a proper job was a distant dream, a world away from the dusty village paths I walked.</p>
+                
+                <p>And then, in the midst of this struggle, the ghost of my past materialized.</p>
+                
+                <p>In June of 2019, my father returned to Mukono district for a burial. Imagine—since I was one and a half years old, this man had been a faceless void, a story without a face. I had no memory of what he looked like. For all the years of my life, through every struggle and success, he had been as if he weren't existing.</p>
+                
+                <p>He was happy to see me. I thought he would not recognize me, a man now standing where he had left a toddler. But then he spoke, and he called me a name that reached across two decades: "Ivan the Dragon." He told me it was the name he called me when I was young. In that moment, a ghost reached out with a specific, intimate memory I myself did not possess. It was a bewildering collision of two realities—his memory of a son, and my lifetime of his absence.</p>
+                
+                <p>After the burial, he left. I have never seen him again.</p>
+                
+                <p>That encounter sealed a chapter in my heart. How can you look for a love you never experienced? How can you mourn a shadow? I made a conscious decision, a choice for my own peace. I decided to concentrate my love, my energy, and my gratitude on the people who were truly there for me: my mother, Moreen Nansubuga, and my grandmother, Mary Nakabugo. They were my reality. Their love was not a memory; it was my foundation.</p>
+            </div>
+
+            <!-- Chapter 4 -->
+            <div class="chapter">
+                <h2>Chapter 4: A Chance to Serve</h2>
+                <p>The heat of July 2019 in Seeta, Mukono, was a physical weight. I felt it with every shovelful of sand, every bag of cement I mixed, every brick I carried closer for the masons. I was a potter, my hands rough, my clothes perpetually dusted with the grit of construction—a cheap laborer on a site, dreaming of a law book while mixing concrete.</p>
+                
+                <p>Then, news came like a sudden, cooling rain. A recruitment drive was announced. The Uganda Peoples Defence Forces were going to recruit civilians. It was a chance—a structured path, a purpose, a future vastly different from the uncertain grind of daily labor.</p>
+                
+                <p>The decision was instant, but the act was not simple. I couldn't just walk off the site. This job, however hard and poorly paid, was my sustenance. So, I managed to sneak away. It was a risk, but the dream of a stable future was a risk worth taking. I left the half-built walls of Seeta behind and made my way back to our village, down south in Mukono District. My future was uncertain, but for the first time in a long time, I was running <em>towards</em> something, not just away from hardship.</p>
+                
+                <p>When I reached home and told my mother, Moreen Nansubuga, about the recruitment, her face lit up with hope. She was happy and gave me her full support to go and join the UPDF. It was a shared dream for a better future. Together, we followed every requirement and met every criteria, leaving no room for error.</p>
+                
+                <p>On the morning of July 27th, 2019, I stood at the district headquarters where the recruitment exercise was taking place. The sight was overwhelming. The competition was fierce, a sea of thousands and thousands of young men, all hoping for the same chance. A feeling of doubt crept in—was it even possible to be seen in such a crowd?</p>
+                
+                <p>But against those staggering odds, fortune favored me. When the final list was called, my name was on it. I was among the lucky few—one of only 187 recruits selected that day. The feeling was surreal; a door to a new life had just swung open.</p>
+                
+                <p>That door led directly to a training school far away in Nakaseke District for basic military training. It was, without a doubt, the hardest time I have ever endured since I was born. The physical demands, the mental pressure, and the relentless discipline pushed me to my absolute limits. But the same resilience that had carried me through my father's neglect and the struggles in the village now rose within me. I endured. I pushed through. And I managed to finish the training.</p>
+                
+                <p>That was not the end, but the true beginning of my new path. In 2020, I received my first deployment, finally stepping into the role I had fought so hard to earn. And my journey of growth continued in a direction I never fully imagined. In 2023, my efforts and potential were recognized, and I was nominated for a prestigious course in <strong>Communication and Information Technology (CIT)</strong> with the Uganda Peoples Defense Forces.</p>
+                
+                <p>This was more than just another assignment; it was a gateway to the future. It connected the discipline I had learned with the digital world that drives modern operations. From the dusty construction sites and village paths, my journey had now led me to the forefront of technology and strategy within the force.</p>
+            </div>
+
+            <!-- Chapter 5 -->
+            <div class="chapter">
+                <h2>Chapter 5: A New Family and a Debt of Love</h2>
+                <p>Life in the UPDF has been good to me. Beyond the discipline and the duty, I found something I had longed for since childhood: a sense of brotherhood. I have found good comrades within the army—a band of brothers who stand together, an almost family forged not by blood, but by shared purpose and mutual respect.</p>
+                
+                <p>I feel now that my life is truly just beginning. I am looking forward to developing myself further, to climbing higher in my career, and to seizing every opportunity for growth. But my success is not for me alone. The driving force behind every step I take is the unwavering desire to uplift those who were there for me when I had nothing: my mother, Moreen Nansubuga, and my grandmother, Mary Nakabugo.</p>
+                
+                <p>They are always in my debts. In my heart, I feel that everything I do for them will never be enough to repay the immense love and support they showed me. They invested in me when the world had turned its back, and now, I will spend my life ensuring their sacrifice was not in vain. My journey is my tribute to them.</p>
+                
+                <p>So help me God.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="chapter">
+                    <h2>My Projects & Achievements</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Military Communication Systems</h3>
+                            <p>Enhanced communication infrastructure during my CIT training with UPDF.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Community Football Coach</h3>
+                            <p>Organized local football tournaments and trained youth in my community.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Education Support Initiative</h3>
+                            <p>Mentoring young students in my village to pursue their education dreams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Places I've Visited Section -->
+        <section id="travel">
+            <div class="container">
+                <div class="chapter">
+                    <h2>Places I've Visited</h2>
+                    
+                    <!-- Bundibugyo Hotsprings -->
+                    <div class="travel-spot">
+                        <h3>🌋 Bundibugyo Hotsprings</h3>
+                        <p>One of nature's wonders - where hot water boils from the earth and we cook eggs naturally!</p>
+                        <div class="photo-gallery">
+                            <div>
+                                <img src="photos/travel/bundibugyo1.jpg" alt="Bundibugyo Hotsprings">
+                                <div class="image-caption">The amazing hotsprings of Bundibugyo</div>
+                            </div>
+                            <div>
+                                <img src="photos/travel/bundibugyo2.jpg" alt="Cooking eggs in hotsprings">
+                                <div class="image-caption">Cooking eggs in natural hot water</div>
+                            </div>
+                            <div>
+                                <div class="video-placeholder">
+                                    <h4>🎥 Cooking Eggs Video</h4>
+                                    <p>Video of me cooking eggs in the hotsprings</p>
+                                    <p><em>Upload to YouTube and I'll add the video here</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kagadi Trip -->
+                    <div class="travel-spot">
+                        <h3>🏞️ Kagadi Trip</h3>
+                        <p>Beautiful landscapes and memorable experiences in Western Uganda</p>
+                        <div class="photo-gallery">
+                            <div>
+                                <img src="photos/travel/kagadi1.jpg" alt="Kagadi scenery">
+                                <div class="image-caption">Beautiful Kagadi scenery</div>
+                            </div>
+                            <div>
+                                <img src="photos/travel/kagadi2.jpg" alt="Kagadi memories">
+                                <div class="image-caption">Memorable moments in Kagadi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More Places Grid -->
+                    <div class="travel-grid">
+                        <div class="travel-card">
+                            <img src="photos/travel/kampala.jpg" alt="Kampala City">
+                            <h3>Kampala City</h3>
+                            <p>My birthplace and Uganda's vibrant capital</p>
+                        </div>
+                        <div class="travel-card">
+                            <img src="photos/travel/mukono.jpg" alt="Mukono District">
+                            <h3>Mukono District</h3>
+                            <p>Where I grew up and found new beginnings</p>
+                        </div>
+                        <div class="travel-card">
+                            <img src="photos/travel/nakaseke.jpg" alt="Nakaseke Training">
+                            <h3>Nakaseke District</h3>
+                            <p>Military training school location</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Music Section -->
+        <section id="music">
+            <div class="container">
+                <div class="chapter">
+                    <h2>My Reggae Music Love</h2>
+                    <div class="music-player">
+                        <h3>🎵 Lucky Dube - My Inspiration 🎵</h3>
+                        <p>"Reggae music brings peace to my soul and strength to my spirit"</p>
+                        
+                        <div class="song-list">
+                            <div class="song-item" onclick="window.open('https://www.youtube.com/watch?v=pbXNhGGmkeA', '_blank')">
+                                <strong>Lucky Dube - Prisoner</strong>
+                                <p>"This song gives me strength during challenges" → Click to listen</p>
+                            </div>
+                            <div class="song-item" onclick="window.open('https://www.youtube.com/watch?v=6lO3T-7m6K8', '_blank')">
+                                <strong>Lucky Dube - Remember Me</strong>
+                                <p>"Reminds me of my roots and journey" → Click to listen</p>
+                            </div>
+                            <div class="song-item" onclick="window.open('https://www.youtube.com/watch?v=6lO3T-7m6K8', '_blank')">
+                                <strong>Lucky Dube - Together As One</strong>
+                                <p>"Inspires unity and brotherhood" → Click to listen</p>
+                            </div>
+                            <div class="song-item" onclick="window.open('https://www.youtube.com/watch?v=pbXNhGGmkeA', '_blank')">
+                                <strong>Lucky Dube - The Way It Is</strong>
+                                <p>"Keeps me grounded and realistic" → Click to listen</p>
+                            </div>
+                        </div>
+                        
+                        <p style="margin-top: 20px;">
+                            <em>"Reggae is not just music, it's a message of love, struggle, and hope"</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Family & Memories Section -->
+        <section id="family">
+            <div class="container">
+                <div class="chapter">
+                    <h2>Family & Memories</h2>
+                    
+                    <!-- My Mother -->
+                    <div class="family-section">
+                        <h3>👩‍👦 My Mother - Moreen Nansubuga</h3>
+                        <p>The woman who sacrificed everything for me - my hero and inspiration</p>
+                        <div class="photo-gallery">
+                            <div>
+                                <img src="photos/family/mom1.jpg" alt="My mother Moreen">
+                                <div class="image-caption">My mother, Moreen Nansubuga</div>
+                            </div>
+                            <div>
+                                <img src="photos/family/mom2.jpg" alt="With my mother">
+                                <div class="image-caption">With my loving mother</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Childhood Memories -->
+                    <div class="family-section">
+                        <h3>👶 My Childhood Memories</h3>
+                        <p>From toddler to the man I am today - my journey in pictures</p>
+                        <div class="photo-gallery">
+                            <div>
+                                <img src="photos/family/toddler1.jpg" alt="Me as toddler">
+                                <div class="image-caption">Me as a young toddler</div>
+                            </div>
+                            <div>
+                                <img src="photos/family/toddler2.jpg" alt="Childhood photo">
+                                <div class="image-caption">Growing up years</div>
+                            </div>
+                            <div>
+                                <img src="photos/family/recent1.jpg" alt="Recent photo">
+                                <div class="image-caption">Who I am today</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friends & Comrades Section -->
+        <section id="friends">
+            <div class="container">
+                <div class="chapter">
+                    <h2>Friends & Comrades</h2>
+                    <p>The brothers and friends who stand with me through life's journey</p>
+                    <div class="photo-gallery">
+                        <div>
+                            <img src="photos/friends/friends1.jpg" alt="UPDF Comrades">
+                            <div class="image-caption">My UPDF comrades - brothers in arms</div>
+                        </div>
+                        <div>
+                            <img src="photos/friends/friends2.jpg" alt="Army Friends">
+                            <div class="image-caption">Fellow soldiers and friends</div>
+                        </div>
+                        <div>
+                            <img src="photos/friends/friends3.jpg" alt="Childhood Friends">
+                            <div class="image-caption">Friends from childhood days</div>
+                        </div>
+                        <div>
+                            <img src="photos/friends/comrades1.jpg" alt="Military Comrades">
+                            <div class="image-caption">My military family</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="chapter">
+                    <h2>Skills & Training</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">Military Discipline</span>
+                        <span class="skill-tag">Communication Technology</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Football Coaching</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Community Service</span>
+                        <span class="skill-tag">Mentoring</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">First Aid</span>
+                        <span class="skill-tag">Physical Training</span>
+                        <span class="skill-tag">Weapons Handling</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <div class="chapter">
+                    <h2>Photo Gallery</h2>
+                    <div class="photo-gallery">
+                        <!-- Your existing images -->
+                        <div>
+                            <img src="photos/existing/FB_IMG_16345069348794940.jpg" alt="Ivan Ssentamu - My Journey">
+                            <div class="image-caption">My Journey Begins</div>
+                        </div>
+                        <div>
+                            <img src="photos/existing/IMG-20240209-WA0022.jpg" alt="Ivan Ssentamu - UPDF Service">
+                            <div class="image-caption">Serving with Pride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission">
+            <div class="container">
+                <div class="chapter">
+                    <h2>My Mission & Vision</h2>
+                    <p>Life in UPDF is good, I got good comrades within the army, almost a family. My life is just beginning and I'm looking forward to develop myself and uplift those who were there for me.</p>
+                    <p>They are always in my debts, cause everything I do for them isn't enough for the love and support they showed me. So help me GOD.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="chapter">
+                    <h2>Get In Touch</h2>
+                    <p>If my story has inspired you, I would love to hear from you.</p>
+                    
+                    <div class="contact-info">
+                        <div class="phone-numbers">
+                            <a href="tel:+256778193844" class="phone-number">+256 778 193 844
